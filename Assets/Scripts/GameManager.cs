@@ -79,6 +79,30 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void DeathFromEnemy()
+    {
+        DonerHp = 0;
+        Donerimg1.SetActive(false);
+        Donerimg2.SetActive(false);
+        Donerimg3.SetActive(false);
+
+        GameObject player = GameObject.Find("Player");
+        Movement playerspeed = player.GetComponent<Movement>();
+        playerspeed.enabled = false;
+
+        GameObject enemy = GameObject.Find("Enemy");
+        EnemyMovement enemySpeed = enemy.GetComponent<EnemyMovement>();
+        
+
+        if (DonerHp == 0)
+        {
+            enemySpeed.m_Speed = 0;
+            Dead();
+        }
+
+        
+    }
+
     
     public void Restart()
     {   

@@ -71,7 +71,13 @@ public class Movement : MonoBehaviour
             Destroy(other.gameObject);
             GameObject.Find("GameManager").GetComponent<GameManager>().HP();
         }
+
+        if (other.tag == "enemy")
+        {
+            GameObject.Find("GameManager").GetComponent<GameManager>().DeathFromEnemy();
+        }
     }
+
 
     void ParticleDust()
     {
