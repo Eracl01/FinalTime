@@ -143,7 +143,10 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown("r"))
+        {
+            GameObject.Find("GameManager").GetComponent<GameManager>().Restart();
+        }
     }
 
     void ParticleBlood()
@@ -151,4 +154,7 @@ public class GameManager : MonoBehaviour
         blood.Play();
 
     }
+
+     
+
 }
