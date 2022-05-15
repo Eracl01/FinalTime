@@ -5,9 +5,6 @@ using UnityEngine;
 
 public class Spike : MonoBehaviour
 {
-    public GameObject player;
-    public GameObject spike;
-    public Rigidbody2D rb;
     public Collider2D PlayerDamageCollider;
     private bool check = false;
     // Start is called before the first frame update
@@ -27,8 +24,6 @@ public class Spike : MonoBehaviour
         {
             
             GameObject.Find("GameManager").GetComponent<GameManager>().Damage();
-            //Vector3 dir = (player.transform.position - spike.transform.position).normalized;
-            //rb.AddForce(dir * 3.0F, ForceMode2D.Impulse);
             check = true;
             StartCoroutine(ExampleCoroutine());
 

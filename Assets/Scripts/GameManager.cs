@@ -7,8 +7,6 @@ public class GameManager : MonoBehaviour
 {
      
     public GameObject playersprite;
-    public Collider2D PlayerDamageCollider;
-    public GameObject spike;
     public GameObject donerTest;
     public ParticleSystem blood;
     public float otbros = 2;
@@ -39,12 +37,9 @@ public class GameManager : MonoBehaviour
     public void Damage()
     {
         DonerHp--;
-        //Vector3 dir = (playersprite.transform.position - spike.transform.position).normalized;
-        //rb.AddForce(dir * 5.0F, ForceMode2D.Impulse);
+
         rb.velocity = new Vector2(-transform.localScale.x, 0) * otbros;
 
-        //GetComponent<Movement>().enabled = false;
-                
         if (DonerHp == 2)
         {
             Donerimg1.SetActive(true);

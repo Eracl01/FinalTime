@@ -8,16 +8,13 @@ public class Movement : MonoBehaviour
     public float speed;
     public float jumpforce;
     public Animator anim;
-    public Rigidbody2D rg;
     public ParticleSystem dust;
     public bool isGrounded;
-    public Collider2D PlayerHpCollider;
-    public Animator RetakeAnim;
 
-    private Rigidbody rb;
+    private Rigidbody2D rg;
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        rg = GetComponent<Rigidbody2D>();
     }
 
     void OnCollisionEnter2D()
