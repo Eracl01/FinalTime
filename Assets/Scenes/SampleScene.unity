@@ -18918,7 +18918,7 @@ PrefabInstance:
     - target: {fileID: 2523484287876655816, guid: 067750c48049d8040be5fd2a7c8a3348,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.004
+      value: 2.09
       objectReference: {fileID: 0}
     - target: {fileID: 2523484287876655816, guid: 067750c48049d8040be5fd2a7c8a3348,
         type: 3}
@@ -18975,6 +18975,11 @@ PrefabInstance:
       propertyPath: Camera
       value: 
       objectReference: {fileID: 519420028}
+    - target: {fileID: 2523484287876655818, guid: 067750c48049d8040be5fd2a7c8a3348,
+        type: 3}
+      propertyPath: RetakeAnim
+      value: 
+      objectReference: {fileID: 2109296939}
     - target: {fileID: 2523484287876655819, guid: 067750c48049d8040be5fd2a7c8a3348,
         type: 3}
       propertyPath: m_Offset.y

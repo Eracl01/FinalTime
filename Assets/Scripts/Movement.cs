@@ -12,6 +12,7 @@ public class Movement : MonoBehaviour
     public ParticleSystem dust;
     public bool isGrounded;
     public Collider2D PlayerHpCollider;
+    public Animator RetakeAnim;
 
     private Rigidbody rb;
     void Start()
@@ -74,7 +75,9 @@ public class Movement : MonoBehaviour
 
         if (other.tag == "enemy")
         {
+            
             GameObject.Find("GameManager").GetComponent<GameManager>().DeathFromEnemy();
+            
         }
     }
 

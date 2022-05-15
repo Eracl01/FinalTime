@@ -17,7 +17,8 @@ public class GameManager : MonoBehaviour
     public GameObject Donerimg2;
     public GameObject Donerimg3;
     public Rigidbody2D rb;
-    
+
+    private bool start = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -92,12 +93,18 @@ public class GameManager : MonoBehaviour
 
         GameObject enemy = GameObject.Find("Enemy");
         EnemyMovement enemySpeed = enemy.GetComponent<EnemyMovement>();
-        
+        Animator enemyAnimator = enemy.GetComponent<Animator>();
 
+        start = true;
         if (DonerHp == 0)
         {
+
             enemySpeed.m_Speed = 0;
-            Dead();
+            
+            StartCoroutine(CoroutineAnim());
+
+            
+            
         }
 
         
@@ -154,7 +161,18 @@ public class GameManager : MonoBehaviour
         blood.Play();
 
     }
+    IEnumerator CoroutineAnim()
+    {
+        GameObject enemy = GameObject.Find("Enemy");
+        Animator enemyAnimator = enemy.GetComponent<Animator>();
+        while (start)
+        {
+            enemyAnimator.SetBool("RetakeKill", true);
+            yield return new WaitForSeconds(0.3f);
+            Dead();
+            start = false;
+        }
+    }
 
-     
 
 }
