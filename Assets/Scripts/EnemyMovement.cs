@@ -6,6 +6,7 @@ public class EnemyMovement : MonoBehaviour
 {
     public float m_Speed;
     Rigidbody2D rb;
+    
     // Start is called before the first frame update
     void Start()
     {

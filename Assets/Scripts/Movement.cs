@@ -10,6 +10,7 @@ public class Movement : MonoBehaviour
     public Animator anim;
     public ParticleSystem dust;
     public bool isGrounded;
+    
 
     private Rigidbody2D rg;
     void Start()
