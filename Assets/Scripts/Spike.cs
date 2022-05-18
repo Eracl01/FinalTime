@@ -26,7 +26,8 @@ public class Spike : MonoBehaviour
             GameObject.Find("GameManager").GetComponent<GameManager>().Damage();
             check = true;
             StartCoroutine(ExampleCoroutine());
-
+            Debug.Log(GameObject.Find("GameManager").GetComponent<GameManager>().DonerHp);
+            
 
         }
     }
@@ -38,7 +39,7 @@ public class Spike : MonoBehaviour
             GameObject player = GameObject.Find("Player");
             Movement playerspeed = player.GetComponent<Movement>();
             playerspeed.enabled = false;
-            yield return new WaitForSeconds(2);
+            yield return new WaitForSeconds(0.5f);
             PlayerDamageCollider.isTrigger = true;
             playerspeed.enabled = true;
             check = false;
