@@ -15,6 +15,11 @@ public class GameManager : MonoBehaviour
     public GameObject Donerimg2;
     public GameObject Donerimg3;
     public Rigidbody2D rb;
+    public GameObject PauseMenu;
+    public GameObject WinMenu;
+    public GameObject DeadMenu;
+    public GameObject UI;
+
 
     private bool start = false;
     // Start is called before the first frame update
@@ -33,6 +38,8 @@ public class GameManager : MonoBehaviour
             playerspeed.jumpforce = 0f;
             Object.Destroy(playersprite);
             ParticleBlood();
+            DeadMenu.SetActive(true);
+            UI.SetActive(false);
     }
     public void Damage()
     {
@@ -169,5 +176,42 @@ public class GameManager : MonoBehaviour
         }
     }
 
+
+    public void Pause()
+    {
+        PauseMenu.SetActive(true);
+        Time.timeScale = 0f;
+        UI.SetActive(false);
+    }
+
+    public void Resume()
+    {
+        PauseMenu.SetActive(false);
+        WinMenu.SetActive(false);
+        DeadMenu.SetActive(false);
+        UI.SetActive(true);
+        Time.timeScale = 1f;
+    }
+
+    public void NextLVL()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+       
+    }
+    public void Exit()
+    {
+        Application.Quit();
+    }
+    public void Mainmenu()
+    {
+        SceneManager.LoadScene("Menu");
+    }
+
+    public void Win()
+    {
+        WinMenu.SetActive(true);
+        Time.timeScale = 0f;
+        UI.SetActive(false);
+    }
 
 }
